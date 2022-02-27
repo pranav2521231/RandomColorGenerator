@@ -1,0 +1,75 @@
+<html>
+<head>
+
+<style>
+
+*{
+box-sizing:border-box;
+padding:0;
+margin:0;
+}
+    main{
+	  min-height:100vh;
+	  display:flex;
+	  flex-direction:column;
+	  justify-content:center;
+	  align-items:center;
+	}
+	
+	h1{
+	padding:1rem 2rem;
+	background:#333;
+	color:#efefef;
+	border-radius:1rem;
+	}
+	
+	button{
+	padding:1rem 2rem;
+	margin-top:1rem;
+	border-radius:1rem;
+	background:#333;
+	color:#efefef;
+	border:none;
+	outline:none;
+	transition: background .4s;
+	cursor:pointer;
+	}
+	
+	button:hover{
+	background-color:#efefef;
+	color:#333;
+	}
+</style>
+
+</head>
+
+  <main>
+     <h1> Current Background Color : rgb(255,255,255) </h1>
+	 <button>Click to Random color change </button>
+  </main>
+
+
+<script>
+
+   const body=document.body;
+   const button=document.querySelector("button");
+   const h1=document.querySelector("h1");
+   //console.log(button)
+   
+   
+   function colorGenertor(){
+   const red=Math.floor(Math.random()*256);
+   const green=Math.floor(Math.random()*256);
+   const blue=Math.floor(Math.random()*256);
+   const randoColor=`rgb(${red},${green},${blue})`
+   return randoColor;
+   }
+   button.addEventListener("click",()=>{
+   
+   body.style.background=colorGenertor();
+   h1.textContent=colorGenertor()
+   })
+</script>
+<body>
+</body>
+</html>
